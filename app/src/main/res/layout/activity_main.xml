@@ -23,7 +23,7 @@ So, we are leaving the template code in. -->
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.roomwordssample.MainActivity">
+    tools:context="com.example.android.roomwordssample.ui.MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

@@ -24,7 +24,7 @@ limitations under the License. -->
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.android.roomwordssample.MainActivity"
+    tools:context="com.example.android.roomwordssample.ui.MainActivity"
     tools:showIn="@layout/activity_main">
 
     <android.support.v7.widget.RecyclerView

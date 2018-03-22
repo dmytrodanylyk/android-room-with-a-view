@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample;
+package com.example.android.roomwordssample.db;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -24,6 +24,8 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
+import com.example.android.roomwordssample.model.Word;
+
 /**
  * This is the backend. The database. This used to be done by the OpenHelper.
  * The fact that this has very few comments emphasizes its coolness.
@@ -45,7 +47,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
                             // Wipes and rebuilds instead of migrating if no Migration object.
                             // Migration is not part of this codelab.
                             .fallbackToDestructiveMigration()
-                            .addCallback(sRoomDatabaseCallback)
+//                            .addCallback(sRoomDatabaseCallback)
                             .build();
                 }
             }

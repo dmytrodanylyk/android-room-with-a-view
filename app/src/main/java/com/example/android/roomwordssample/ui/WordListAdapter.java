@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample;
+package com.example.android.roomwordssample.ui;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -22,6 +22,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.android.roomwordssample.R;
+import com.example.android.roomwordssample.model.Word;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample;
+package com.example.android.roomwordssample.viewmodel;
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -16,33 +16,31 @@ package com.example.android.roomwordssample;
  * limitations under the License.
  */
 
-import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
+import android.app.Application
+import android.arch.lifecycle.AndroidViewModel
+import android.arch.lifecycle.LiveData
 
-import java.util.List;
+import com.example.android.roomwordssample.db.WordRepository
+import com.example.android.roomwordssample.model.Word
+import com.example.android.roomwordssample.ui.channel
+import kotlinx.coroutines.experimental.launch
 
 /**
  * View Model to keep a reference to the word repository and
  * an up-to-date list of all words.
  */
 
-public class WordViewModel extends AndroidViewModel {
+class WordViewModel(application: Application) : AndroidViewModel(application) {
 
-    private WordRepository mRepository;
+    private val repository: WordRepository = WordRepository(application)
     // Using LiveData and caching what getAlphabetizedWords returns has several benefits:
     // - We can put an observer on the data (instead of polling for changes) and only update the
     //   the UI when the data actually changes.
     // - Repository is completely separated from the UI through the ViewModel.
-    private LiveData<List<Word>> mAllWords;
+    val allWords: LiveData<List<Word>> = repository.allWords
 
-    public WordViewModel (Application application) {
-        super(application);
-        mRepository = new WordRepository(application);
-        mAllWords = mRepository.getAllWords();
+
+    fun insert(word: Word) {
+        repository.insert(word)
     }
-
-    LiveData<List<Word>> getAllWords() { return mAllWords; }
-
-    public void insert(Word word) { mRepository.insert(word); }
 }
